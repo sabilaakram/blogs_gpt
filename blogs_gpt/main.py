@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from . import models, schemas, crud
 from .database import engine, create_db_and_tables
 from fastapi.openapi.utils import get_openapi
-from .settings import NGROK_URL
+# from .settings import NGROK_URL
 
 app = FastAPI()
 
@@ -18,20 +18,20 @@ def get_session():
         yield session
 
 
-def custom_openapi():
-    if app.openapi_schema:
-        return app.openapi_schema
-    openapi_schema = get_openapi(
-        title="FastAPI",
-        version="0.1.0",
-        description="Your API description",
-        routes=app.routes,
-    )
-    openapi_schema["servers"] = [{"url": NGROK_URL}]
-    app.openapi_schema = openapi_schema
-    return app.openapi_schema
+# def custom_openapi():
+#     if app.openapi_schema:
+#         return app.openapi_schema
+#     openapi_schema = get_openapi(
+#         title="FastAPI",
+#         version="0.1.0",
+#         description="Your API description",
+#         routes=app.routes,
+#     )
+#     openapi_schema["servers"] = [{"url": NGROK_URL}]
+#     app.openapi_schema = openapi_schema
+#     return app.openapi_schema
 
-app.openapi = custom_openapi
+# app.openapi = custom_openapi
 
 
 

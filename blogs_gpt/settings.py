@@ -8,4 +8,3 @@ except FileNotFoundError:
 
 DATABASE_URL = config("DATABASE_URL", cast=Secret)
 # NGROK_URL = config("NGROK_URL", default="http://localhost:8000")
-NGROK_URL = config( default="http://localhost:8000")
