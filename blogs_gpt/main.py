@@ -54,7 +54,7 @@ def read_blog(blog_id: int, db: Session = Depends(get_session)):
 async def update_blog(blog_id: int, blog: schemas.BlogUpdate, db: Session = Depends(get_session)):
     updated_blog = crud.update_blog(db=db, blog_id=blog_id, blog=blog)
     if updated_blog is None:
-        raise HTTPException(status_code=404, detail="Blog not found")
+        raise HTTPException(status_code=404, detail="Blog is not found")
     return updated_blog
 
 @app.delete("/blogs/{blog_id}")
