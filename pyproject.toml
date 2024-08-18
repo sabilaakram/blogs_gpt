@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "blogs-gpt"
+version = "0.1.0"
+description = ""
+authors = ["sabilaakram <139713987+sabilaakram@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.0"
+uvicorn = "^0.30.6"
+sqlalchemy = "^2.0.32"
+pydantic = "^2.8.2"
+psycopg2-binary = "^2.9.9"
+python-dotenv = "^1.0.1"
+alembic = "^1.13.2"
+sqlmodel = "^0.0.21"
+python-multipart = "^0.0.9"
+
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
